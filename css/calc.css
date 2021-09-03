@@ -1,0 +1,90 @@
+body {
+    align-items: center;
+    text-align: center;
+    padding-top: 70px;
+    padding-left: 300px;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+}
+
+#clr {
+    width: 160px;
+    font-weight: bold;
+    background-color: rgb(219, 240, 163);
+}
+
+#txtnode {
+    width: 215px;
+    height: 40px;
+    border-bottom: 2px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#mod {
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: rgb(122, 214, 218);
+}
+
+#sub {
+    font-weight: bold;
+    border-radius: 50%;
+    /* background-color: rgb(230, 141, 141);*/
+    background-color: rgb(236, 76, 236);
+}
+
+#add {
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: rgb(111, 204, 119);
+}
+
+#mul {
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: rgb(226, 177, 70);
+}
+
+#divv {
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: rgb(233, 89, 89);
+}
+
+#number {
+    font-weight: bold;
+    background-color: rgb(228, 203, 203);
+}
+
+#equal {
+    font-weight: bold;
+    /* background-color: rgb(236, 76, 236);*/
+    background-color: rgb(230, 141, 141);
+}
+
+#number:hover {
+    background-color: white;
+    color: tomato;
+}
+
+#equal:hover,
+#clr:hover {
+    background-color: black;
+    color: whitesmoke;
+}
+
+#divv:hover,
+#mul:hover,
+#add:hover,
+#sub:hover,
+#mod:hover {
+    background-color: darkslateblue;
+    color: whitesmoke;
+    font-weight: bolder;
+}
