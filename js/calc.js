@@ -1,3 +1,5 @@
+localStorage.setItem("Memory_Value", 0);
+
 var h1 = document.createElement("h1");
 h1.innerHTML = "Calculator";
 h1.style.color = "brown";
@@ -167,15 +169,32 @@ tabparent.appendChild(tabro4);
 
 var tabro5 = document.createElement("tr");
 
-var clrtab = document.createElement("td");
-var clrbutt = document.createElement("button");
-clrbutt.innerHTML = "CLR";
-clrbutt.value = "CLR";
-clrbutt.id = "clr";
-clrtab.setAttribute("colspan", "3");
-clrtab.setAttribute("onclick", "clearsc()");
-clrtab.appendChild(clrbutt);
-tabro5.appendChild(clrtab);
+var tabmadd = document.createElement("td");
+var buttomadd = document.createElement("button");
+buttomadd.innerHTML = "M+";
+buttomadd.value = "M+";
+buttomadd.id = "memory-op";
+buttomadd.setAttribute("onclick", "memadd()");
+tabmadd.appendChild(buttomadd);
+tabro5.appendChild(tabmadd);
+
+var tabsub = document.createElement("td");
+var buttomsub = document.createElement("button");
+buttomsub.innerHTML = "M-";
+buttomsub.value = "M-";
+buttomsub.id = "memory-op";
+buttomsub.setAttribute("onclick", "memsub()");
+tabsub.appendChild(buttomsub);
+tabro5.appendChild(tabsub);
+
+var tabmc = document.createElement("td");
+var buttomc = document.createElement("button");
+buttomc.innerHTML = "MC";
+buttomc.value = "MC";
+buttomc.id = "memory-op";
+buttomc.setAttribute("onclick", "memreset()");
+tabmc.appendChild(buttomc);
+tabro5.appendChild(tabmc);
 
 var tabcoldiv = document.createElement("td");
 var buttodiv = document.createElement("button");
@@ -187,12 +206,23 @@ tabcoldiv.appendChild(buttodiv);
 tabro5.appendChild(tabcoldiv);
 tabparent.appendChild(tabro5);
 
+var tabro6 = document.createElement("tr");
+
+var clrtab = document.createElement("td");
+var clrbutt = document.createElement("button");
+clrbutt.innerHTML = "CLR";
+clrbutt.value = "CLR";
+clrbutt.id = "clr";
+clrtab.setAttribute("colspan", "3");
+clrtab.setAttribute("onclick", "clearsc()");
+clrtab.appendChild(clrbutt);
+tabro6.appendChild(clrtab);
+tabparent.appendChild(tabro6);
+
 document.body.appendChild(tabparent);
 
-var numberkey = document.createElement("button");
+// var numberkey = document.createElement("button");
 
-//function abdjdjeueueyehegwhjdwhjdewhjwdhw()
-//{}
 function showup(val) {
     input.onkeypress = keypresshandle;
     document.getElementById("txtnode").value += val;
@@ -215,6 +245,23 @@ function evaluate(formula) {
     var r = window.a;
     console.log(window.a);
     return r;
+}
+
+function memadd(){
+    let x = document.getElementById("txtnode").value;
+    if(Number(x))
+    localStorage.setItem("Memory_Value", parseInt(x)+(+localStorage.getItem("Memory_Value")));
+}
+
+function memsub(){
+    let x = document.getElementById("txtnode").value;
+    if(Number(x))
+    localStorage.setItem("Memory_Value", (+localStorage.getItem("Memory_Value"))-parseInt(x));
+}
+
+function memreset(){
+    document.getElementById("txtnode").value = localStorage.getItem("Memory_Value") ;
+    localStorage.setItem("Memory_Value", 0);
 }
 
 function clearsc() {

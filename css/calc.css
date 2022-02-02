@@ -35,7 +35,6 @@ button {
 #sub {
     font-weight: bold;
     border-radius: 50%;
-    /* background-color: rgb(230, 141, 141);*/
     background-color: rgb(236, 76, 236);
 }
 
@@ -64,7 +63,6 @@ button {
 
 #equal {
     font-weight: bold;
-    /* background-color: rgb(236, 76, 236);*/
     background-color: rgb(230, 141, 141);
 }
 
@@ -83,8 +81,13 @@ button {
 #mul:hover,
 #add:hover,
 #sub:hover,
-#mod:hover {
+#mod:hover,
+#memory-op:hover {
     background-color: darkslateblue;
     color: whitesmoke;
     font-weight: bolder;
+}
+
+#memory-op{
+background-color: rgb(189, 179, 245);
 }
